@@ -62,12 +62,7 @@ async function refresh() {
 // --- 統計邏輯 ---
   if ($("granted-count")) $("granted-count").textContent = tasks.filter(t => t.status === "claimed").length;
   if ($("active-count")) $("active-count").textContent = tasks.filter(t => t.status === "open").length;
-const $ = (id) => document.getElementById(id);
 
-function phoneToWaMePath(contactRaw) {
-  if (!contactRaw) return "";
-  const digits = contactRaw.replace(/[^\d]/g, "");
-  return digits.length >= 8 ? `/${digits}` : "";
 }
 
 function makeRequestText(t) {
