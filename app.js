@@ -59,15 +59,9 @@ async function refresh() {
   }
 
   const tasks = data ?? [];
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-
-const SUPABASE_URL = "https://kzjkconzkznxjizqbtjo.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYm" + "FzZSIsInJlZiI6Imt6amtjb256a3pueGppenFidGpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2ODk3NTQsImV4cC" + "I6MjA4ODI2NTc1NH0.UxaWC57SFXXb3bvRgwRJZ3PMb3g54_wRHchh-AQ3Yqk";
-
-console.log("app.js loaded");
-
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
+// --- 統計邏輯 ---
+  if ($("granted-count")) $("granted-count").textContent = tasks.filter(t => t.status === "claimed").length;
+  if ($("active-count")) $("active-count").textContent = tasks.filter(t => t.status === "open").length;
 const $ = (id) => document.getElementById(id);
 
 function phoneToWaMePath(contactRaw) {
