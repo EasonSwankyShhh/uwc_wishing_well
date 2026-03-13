@@ -282,7 +282,7 @@ purgeExpiredRequests();
 setInterval(purgeExpiredRequests, 60000);
   
   if (tasks.length === 0) {
-    $("list").innerHTML = `<div class="msg">No requests yet.</div>`;
+    $("list").innerHTML = `<div class="msg">The well is quiet... <br> Be the first to make a wish! 🪙</div>`;
     return;
   }
 
